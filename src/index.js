@@ -1,17 +1,31 @@
-import React from 'react';
-import ReactDOM from 'react-dom';
-import './index.css';
-import App from './App';
-import reportWebVitals from './reportWebVitals';
+import React from "react";
+import ReactDOM from "react-dom";
+import "./index.css";
+import reportWebVitals from "./reportWebVitals";
+import Card from "./Card";
+import dataSeries from "./dataSeries";
 
+// function nCard(val){
+// return(
+//   <Card
+//   imgSrc={val.imgSrc}
+//   title={val.title}
+//   link={val.link}
+//   />
+//   );
+// }
 ReactDOM.render(
-  <React.StrictMode>
-    <App />
-  </React.StrictMode>,
-  document.getElementById('root')
+  <>
+    <h1 className="heading_style">
+      Latest Netflix Series Recommended For You !!!
+    </h1>
+    ,
+    {dataSeries.map((val) => {
+      return <Card imgSrc={val.imgSrc} title={val.title} link={val.link} />;
+    })}
+  </>,
+
+  document.getElementById("root")
 );
 
-// If you want to start measuring performance in your app, pass a function
-// to log results (for example: reportWebVitals(console.log))
-// or send to an analytics endpoint. Learn more: https://bit.ly/CRA-vitals
 reportWebVitals();
